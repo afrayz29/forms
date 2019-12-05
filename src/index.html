@@ -19,7 +19,19 @@
     </form>
     <script>
     const myForm = document.getElementById("myForm")
+    myForm.addEventListener("submit",(e)=>{)
+        e.preventDefault()
+        
+        const request = new xmHttpRequest();
 
+        request.open("post","Login.php");
+        request.onload = function (){
+            console.log(request.responseText);
+        }
+        request.send(new FormData(myForm));
+        
+
+    });
 </script>
 
 
